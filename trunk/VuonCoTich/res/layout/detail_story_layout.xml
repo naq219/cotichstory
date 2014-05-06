@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bar" >
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="@dimen/title_size" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/bg_back" />
+
+        <ImageView
+            android:contentDescription="@string/app_name"
+            android:id="@+id/imgSeperate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/btnBack"
+            android:src="@drawable/separate" />
+
+        <CheckBox
+            android:id="@+id/chkFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/bg_check"
+            android:button="@null" />
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/web"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/layoutTop"
+        android:layout_above="@+id/adView" />
+
+     <com.google.ads.AdView
+        android:id="@+id/adView"      
+        android:layout_alignParentBottom="true"  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        ads:adSize="BANNER"
+        ads:adUnitId="a15260d8ab0453a"
+        ads:loadAdOnCreate="true" />
+
+</RelativeLayout>
